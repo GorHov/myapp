@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
+import Categories from './components/Categories/Categories';
+import ImageSlider from './components/ImageSlider/ImageSlider';
+import { getImages } from './Redux/actions/action';
 
 function App() {
+
+  const dispatch = useDispatch()
+  const images = useSelector(state => state.MainReducer.images)
+
+  useEffect(() => {
+      dispatch(getImages())
+  },[])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Categories/>
+      <ImageSlider images={images}/>
     </div>
   );
 }

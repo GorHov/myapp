@@ -1,0 +1,21 @@
+.category{
+    display: flex;
+    width: 80%;
+    height: 40px;
+    color: #AAABB2;
+    border-radius: 10px;
+    justify-content:flex-start;
+    align-items:center;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.category:hover{
+    background-color: #2B3851;
+    color: #308FE4;
+}
+
+.active{
+    background-color: #2B3851;
+    color: #308FE4;
+}
